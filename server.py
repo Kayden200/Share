@@ -1,8 +1,8 @@
 import os
 import undetected_chromedriver as uc
 
-# Define ChromeDriver path
-CHROMEDRIVER_DIR = "/app/chromedriver"
+# Use /tmp instead of /app (Render does not allow writing to /app)
+CHROMEDRIVER_DIR = "/tmp/chromedriver"
 CHROMEDRIVER_PATH = f"{CHROMEDRIVER_DIR}/chromedriver"
 
 # Ensure the directory exists before extracting
