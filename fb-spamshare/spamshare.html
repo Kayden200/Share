@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Spam Share Tool</title>
+    <link rel="stylesheet" href="spammshare.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Facebook Spam Share Tool</h1>
+            <p>Log in manually and share a post multiple times</p>
+        </header>
+
+        <div class="input-fields">
+            <button class="login-button" onclick="openFacebook()">Login to Facebook</button>
+
+            <div class="field">
+                <label for="postLink">Facebook Post Link:</label>
+                <input type="text" id="postLink" placeholder="Enter the Facebook post link">
+            </div>
+
+            <div class="field">
+                <label for="shareCount">Number of Shares:</label>
+                <input type="number" id="shareCount" placeholder="Enter number of shares" min="1">
+            </div>
+
+            <button class="start-sharing" onclick="startSpamShare()">Start Sharing</button>
+        </div>
+
+        <footer>
+            <p>Developed by RYLE - Working in the Shadows</p>
+        </footer>
+    </div>
+
+    <script src="spamshare.js"></script>
+
+</body>
+</html>
