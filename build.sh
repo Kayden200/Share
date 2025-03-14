@@ -8,3 +8,8 @@ apt-get update && apt-get install -y libnss3 libxss1 libappindicator3-1 fonts-li
 mkdir -p /app/chromedriver
 unzip -o chromedriver_linux64.zip -d /app/chromedriver
 chmod +x /app/chromedriver/chromedriver
+<<<<<<< HEAD
+=======
+
+echo "[INFO] Build completed successfully."
+>>>>>>> e24d8b3 (Added build.sh for dependencies)
