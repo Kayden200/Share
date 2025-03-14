@@ -1,15 +1,13 @@
 #!/bin/bash
 set -e
 
-# Install missing dependencies for ChromeDriver
-apt-get update && apt-get install -y libnss3 libxss1 libappindicator3-1 fonts-liberation
+# Install required dependencies for ChromeDriver
+apt-get update && apt-get install -y wget unzip libnss3 libxss1 libappindicator3-1 fonts-liberation
 
-# Ensure chromedriver is in the right place
+# Ensure chromedriver is available
 mkdir -p /app/chromedriver
+wget -q https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
 unzip -o chromedriver_linux64.zip -d /app/chromedriver
 chmod +x /app/chromedriver/chromedriver
-<<<<<<< HEAD
-=======
 
-echo "[INFO] Build completed successfully."
->>>>>>> e24d8b3 (Added build.sh for dependencies)
+echo "[INFO] Build script completed successfully."
