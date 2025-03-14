@@ -1,19 +1,24 @@
 import os
 import undetected_chromedriver as uc
 
-# Define ChromeDriver path inside the Render environment
-CHROMEDRIVER_PATH = "/app/chromedriver/chromedriver"
+# Define ChromeDriver path
+CHROMEDRIVER_DIR = "/app/chromedriver"
+CHROMEDRIVER_PATH = f"{CHROMEDRIVER_DIR}/chromedriver"
 
-# Ensure chromedriver is downloaded
+# Ensure the directory exists before extracting
+if not os.path.exists(CHROMEDRIVER_DIR):
+    os.makedirs(CHROMEDRIVER_DIR, exist_ok=True)
+
+# Download ChromeDriver if it doesn’t exist
 if not os.path.exists(CHROMEDRIVER_PATH):
     print("[INFO] Downloading ChromeDriver...")
     os.system("wget -q https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip")
-    os.system("unzip -o chromedriver_linux64.zip -d /app/chromedriver")
-    os.system("chmod +x /app/chromedriver/chromedriver")
+    os.system(f"unzip -o chromedriver_linux64.zip -d {CHROMEDRIVER_DIR}")
+    os.system(f"chmod +x {CHROMEDRIVER_PATH}")
 
 # Start Chrome with custom driver path
 options = uc.ChromeOptions()
-options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
