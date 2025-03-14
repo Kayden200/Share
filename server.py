@@ -1,4 +1,8 @@
 
+
+
+
+
 import os
 import undetected_chromedriver as uc
 
@@ -26,7 +30,11 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
 print("[INFO] Starting ChromeDriver...")
-driver = uc.Chrome(driver_executable_path=CHROMEDRIVER_PATH, options=options)
+driver = uc.Chrome(
+    driver_executable_path=CHROMEDRIVER_PATH, 
+    browser_executable_path=CHROME_BINARY_PATH,  # Explicitly set Chrome path
+    options=options
+)
 
 try:
     driver.get("https://www.facebook.com/")
