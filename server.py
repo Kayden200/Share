@@ -5,8 +5,7 @@ from selenium.webdriver.chrome.options import Options
 
 # Set paths
 CHROMEDRIVER_PATH = "/tmp/chromedriver/chromedriver"
-CHROME_BINARY_PATH = "/usr/bin/google-chrome-stable"
-
+CHROME_BINARY_PATH = "/usr/bin/google-chrome"  # Adjusted Chrome binary path
 # Ensure ChromeDriver exists
 if not os.path.exists(CHROMEDRIVER_PATH):
     print("[INFO] Downloading ChromeDriver...")
